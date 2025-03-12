@@ -4,6 +4,12 @@ const axios = require("axios");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// ✅ Enable CORS for all requests (for development)
+// app.use(cors());
+
+// ✅ OR, restrict CORS to only your frontend
+app.use(cors({ origin: "https://phenikaa-phpc.web.app" }));
+
 // ✅ Add a simple homepage route
 app.get("/", (req, res) => {
     res.send("Welcome to the Prometheus Metrics API!");
