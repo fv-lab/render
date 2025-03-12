@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 // ✅ Add your /metrics route
 app.get("/metrics", async (req, res) => {
     try {
-        const response = await axios.get("http://10.20.9.200:9090/api/v1/query?query=node_cpu_seconds_total");
+        const response = await axios.get("https://7058-118-70-209-177.ngrok-free.app/api/v1/query?query=node_cpu_seconds_total");
         res.json(response.data);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch metrics" });
